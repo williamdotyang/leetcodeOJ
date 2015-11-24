@@ -18,7 +18,6 @@ public class Solution {
         ListNode tmp = head;
 	head = head.next;
 	tmp.next = reversed;
-	reversed = tmp
-	return reverse_rec(reversed, head);
+	return reverse_rec(tmp, head);
     }
 }
