@@ -9,15 +9,13 @@
  
 public class Solution {
     public ListNode reverseList(ListNode head) {
-        ListNode reversed = null;
-        return reverse_rec(reversed, head);
+        return reverse_rec(null, head);
     }
     
     public ListNode reverse_rec(ListNode reversed, ListNode head) {
         if (head == null) return reversed;
-        ListNode tmp = head;
-	head = head.next;
-	tmp.next = reversed;
-	return reverse_rec(tmp, head);
+	ListNode next = head.next;
+	head.next = reversed;
+	return reverse_rec(head, next);
     }
 }
