@@ -6,10 +6,7 @@
 
 def reverseList_rec(reversedList, curr):
     if curr == None:
-        return curr
-    if curr.next == None:
-        curr.next = reversedList
-        return curr
+        return reversedList 
     else:
         nextNode = curr.next
         curr.next = reversedList
