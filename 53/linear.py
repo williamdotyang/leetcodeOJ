@@ -6,7 +6,10 @@ class Solution(object):
         """
         maxEndingHere = maxSoFar = nums[0]
         for x in nums[1:]:
-            maxEndingHere = max(x, maxEndingHere + x)
-            maxSoFar = max(maxSoFar, maxEndingHere)
+            maxEndingHere += x
+            if x > maxEndingHere:
+                maxEndingHere = x
+            if maxEndingHere > maxSoFar:
+                maxSoFar = maxEndingHere
         
         return maxSoFar
