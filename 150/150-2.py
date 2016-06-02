@@ -33,6 +33,6 @@ class Solution(object):
         elif token == "/":
             operand1 = stack.pop()
             operand2 = stack.pop()
-            return operand2 / operand1
+            return int(float(operand2) / float(operand1))
         else:
             print "unrecognized operator"
