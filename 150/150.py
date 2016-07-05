@@ -36,6 +36,6 @@ class Solution(object):
             return operand2 * operand1
         elif operator == "/":
             print operand2 / operand1
-            return operand2 / operand1
+            return int(float(operand2) / float(operand1))
         else:
             print "operator parsing error"
