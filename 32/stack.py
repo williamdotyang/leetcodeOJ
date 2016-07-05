@@ -14,17 +14,12 @@ class Solution(object):
         if len(stack) == 0:
             return len(s)
         max_num = 0
-        count = 0
-        for j in range(0, len(s)):
-            i = len(s) - j - 1
-            if len(stack) > 0 and stack[-1] == i:
-                if count > max_num:
-                    max_num = count
-                stack.pop()
-                count = 0
-            else:
-                count += 1
-        if count > max_num:
-            max_num = count
-            
+        last = len(s)
+        while len(stack) > 0:
+            index = stack.pop()
+            num = last - index - 1
+            max_num = max(max_num, num)
+            last = index
+        max_num = max(max_num, last)
+    
         return max_num
